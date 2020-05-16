@@ -26,6 +26,7 @@ namespace APITestHeroku
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,6 +42,12 @@ namespace APITestHeroku
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors(x => x
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowCredentials());
 
             app.UseEndpoints(endpoints =>
             {
