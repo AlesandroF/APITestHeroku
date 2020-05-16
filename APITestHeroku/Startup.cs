@@ -46,8 +46,7 @@ namespace APITestHeroku
             app.UseCors(x => x
             .AllowAnyOrigin()
             .AllowAnyMethod()
-            .AllowAnyHeader()
-            .AllowCredentials());
+            .AllowAnyHeader());
 
             app.UseEndpoints(endpoints =>
             {
