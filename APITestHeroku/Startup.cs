@@ -37,6 +37,8 @@ namespace APITestHeroku
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseRouting();
+
             app.UseCors(x => x
             .AllowAnyOrigin()
             .AllowAnyMethod()
